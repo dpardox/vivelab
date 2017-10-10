@@ -1,0 +1,81 @@
+<section class="info">
+  <div class="columns is-marginless">
+    <div class="column is-5 is-paddingless">
+      <div class="avatar">
+        <img src="{{ photo }}" *ngIf="photo">
+      </div>
+    </div>
+    <div class="column is-6 is-offset-1">
+      <div class="pt-2-tablet pb-1 pl-3-mobile" *ngIf="user">
+        <div class="title is-marginless has-text-info">{{ user['username'] }}</div>
+        <div class="subtitle has-text-black is-marginless">{{ user['name'] }}</div>
+        <div>{{ user['email'] }}</div>
+        <div>{{ user['address']['street'] }}</div>
+        <div class="is-hidden-touch">{{ user['company']['name'] }}</div>
+        <p class="mt-1 is-hidden-touch"><i>"{{ user['company']['catchPhrase'] }}"</i></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section is-hidden-touch" *ngIf="posts">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <div class="post mb-3 pb-2" *ngFor="let post of posts">
+          <div class="subtitle">{{ post['title'] }}</div>
+          <p>{{ post['body'] }}</p>
+          <div class="level comments-header pb-1 mt-1 mb-0">
+            <div class="level-left"></div>
+            <div class="level-right">
+              <div class="level-item has-text-weight-semibold" [ngClass]="post['expanded'] ? 'active' : ''">{{ post['comments']?.length || 0 }} comentarios</div>
+              <div class="level-item">
+                <a class="expand" (click)="post.expanded = !post.expanded" [ngClass]="post['expanded'] ? 'active' : ''">
+                  {{ post['expanded'] ? '-' : '+' }}
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="coments-body" *ngIf="post['expanded']">
+            <div class="comment p-1" *ngFor="let comment of post['comments']">
+                <div><strong>{{ comment.email }}</strong></div>
+                <p>{{ comment.body }}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="is-hidden-desktop">
+  <div class="container">
+    <div *ngFor="let album of albums">
+      <div class="album-header p-1 has-text-weight-semibold is-size-6">
+        <div class="columns is-mobile">
+          <div class="column" [ngClass]="album['expanded'] ? 'active' : ''">{{ album['title'] }}</div>
+          <div class="column is-narrow">
+            <a (click)="album['expanded'] = !album['expanded']">
+              <div class="expand" [ngClass]="album['expanded'] ? 'active' : ''">
+                  {{ album['expanded'] ? '-' : '+' }}
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="album-body" *ngIf="album['expanded']">
+        <div class="columns is-mobile is-multiline is-marginless  is-paddingless">
+          <div class="column is-4-mobile is-2-tablet" *ngFor="let photo of album['photos']; index as index">
+            <img src="{{ photo['thumbnailUrl'] }}" (click)="album['swiper'] = index">
+          </div>
+        </div>
+      </div>
+      <div *ngIf="album['swiper']">
+        <a class="close p-1" (click)="album['swiper'] = false">
+          <i class="fa fa-close is-size-2 has-text-white"></i>
+        </a>
+        <app-swiper [photos]="album['photos']" [index]="album['swiper']"></app-swiper>
+      </div>
+    </div>
+  </div>
+</section>

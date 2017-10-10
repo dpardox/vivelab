@@ -1,0 +1,93 @@
+.p {
+    @for $i from 0 through 3 {
+        &-#{$i} {
+            padding: #{$i}em!important;
+        }
+    }
+
+    &t {
+        @for $i from 0 through 3 {
+          &-#{$i} {
+              padding-top: #{$i}em!important;
+          }
+
+          @include mobile {
+            &-#{$i}-mobile {
+              padding-top: #{$i}em!important;
+            }
+          }
+
+          @include touch {
+            &-#{$i}-touch {
+              padding-top: #{$i}em!important;
+            }
+          }
+
+          @include tablet {
+            &-#{$i}-tablet {
+              padding-top: #{$i}em!important;
+            }
+          }
+
+          @include desktop {
+            &-#{$i}-desktop {
+              padding-top: #{$i}em!important;
+            }
+          }
+        }
+    }
+
+    &r {
+      @for $i from 0 through 3 {
+          &-#{$i} {
+              padding-right: #{$i}em!important;
+          }
+      }
+    }
+
+    &b {
+      @for $i from 0 through 3 {
+          &-#{$i} {
+              padding-bottom: #{$i}em!important;
+          }
+
+          @include mobile {
+            &-#{$i}-mobile {
+              padding-bottom: #{$i}em!important;
+            }
+          }
+      }
+    }
+
+    &l {
+        @for $i from 0 through 3 {
+            &-#{$i} {
+                padding-left: #{$i}em!important;
+            }
+
+            @include mobile {
+              &-#{$i}-mobile {
+                padding-left: #{$i}em!important;
+              }
+            }
+        }
+    }
+
+    &x {
+        @for $i from 0 through 3 {
+            &-#{$i} {
+                padding-left: #{$i}em!important;
+                padding-right: #{$i}em!important;
+            }
+        }
+    }
+
+    &y {
+        @for $i from 0 through 3 {
+            &-#{$i} {
+                padding-top: #{$i}em!important;
+                padding-bottom: #{$i}em!important;
+            }
+        }
+    }
+}

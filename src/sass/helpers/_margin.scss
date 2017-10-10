@@ -1,0 +1,57 @@
+.m {
+    @for $i from 0 through 3 {
+        &-#{$i} {
+            margin: #{$i}em!important;
+        }
+    }
+
+    &t {
+        @for $i from 0 through 3 {
+            &-#{$i} {
+                margin-top: #{$i}em!important;
+            }
+        }
+    }
+
+    &r {
+        @for $i from 0 through 3 {
+            &-#{$i} {
+                margin-right: #{$i}em!important;
+            }
+        }
+    }
+
+    &b {
+        @for $i from 0 through 3 {
+            &-#{$i} {
+                margin-bottom: #{$i}em!important;
+            }
+        }
+    }
+
+    &l {
+        @for $i from 0 through 3 {
+            &-#{$i} {
+                margin-left: #{$i}em!important;
+            }
+        }
+    }
+
+    &x {
+        @for $i from 0 through 3 {
+            &-#{$i} {
+                margin-right: #{$i}em!important;
+                margin-left: #{$i}em!important;
+            }
+        }
+    }
+
+    &y {
+        @for $i from 0 through 3 {
+            &-#{$i} {
+                margin-top: #{$i}em!important;
+                margin-bottom: #{$i}em!important;
+            }
+        }
+    }
+}

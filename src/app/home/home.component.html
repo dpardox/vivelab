@@ -1,0 +1,7 @@
+<div class="container my-1">
+  <div class="columns is-multiline is-marginless">
+    <div class="column is-8 is-offset-2 px-0" *ngFor="let user of users">
+      <app-card [id]="user['id']" [name]="user['name']" [street]="user['address']['street']" [photo]="user['photoUrl']"></app-card>
+    </div>
+  </div>
+</div>

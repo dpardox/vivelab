@@ -1,0 +1,19 @@
+<div class="card">
+  <img src="{{ photo }}">
+  <div class="columns is-mobile">
+    <div class="column">
+      <div>
+        <div class="title is-4 is-size-6-mobile has-text-white is-marginless">{{ name }}</div>
+        <div class="subtitle is-6 has-text-white">
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          {{ street }}
+        </div>
+      </div>
+    </div>
+    <div class="column is-narrow">
+      <a [routerLink]="['detalle', id]">
+        <div class="expand">+</div>
+      </a>
+    </div>
+  </div>
+</div>

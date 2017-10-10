@@ -1,0 +1,51 @@
+.info {
+  border-bottom: thin solid #ccc;
+}
+
+.avatar {
+  height: 260px;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.comments-header {
+  border-bottom: thin solid #ccc;
+
+  .level-item {
+    transition: all .3s;
+  }
+}
+
+.comment {
+  background-color: #f2f2f2;
+  border-bottom: thin solid #ccc;
+}
+
+.expand {
+  color: #4a4a4a;
+  border-color: #4a4a4a;
+}
+
+.album-header {
+  border-bottom: thin solid #ccc;
+}
+
+.album-body .column {
+  padding: 5px 5px 0;
+}
+
+.active {
+  color: #2595F3;
+  border-color: #2595F3;
+}
+
+.close {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+}

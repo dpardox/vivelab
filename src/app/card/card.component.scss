@@ -1,0 +1,24 @@
+.card {
+  background-color: #ededed;
+  height: 260px;
+  overflow: hidden;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .columns {
+    margin-top: -80px;
+    padding: 0 36px 0 46px;
+
+    .subtitle {
+      margin-top: 4px;
+
+      .fa {
+        margin-right: 6px;
+      }
+    }
+  }
+}
